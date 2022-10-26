@@ -7,8 +7,8 @@ for /f "usebackq skip=1 tokens=1-3" %%g in (`wmic Path Win32_LocalTime Get Day^,
   set year=%%i
   )
 rem pad day and month with leading zeros
-set month=%_month:~-2%
-set day=%_day:~-2%
+set month=%month:~-2%
+set day=%day:~-2%
 For /f "tokens=1-2 delims=/:" %%a in ('time /t') do (set mytime=%%a%%b)
 
 git add .
